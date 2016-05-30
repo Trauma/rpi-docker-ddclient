@@ -1,0 +1,10 @@
+ddclient:
+  image: tromatik/rpi-docker-ddclient
+  volumes:
+    - ./ddclient.conf:/etc/ddclient.conf
+  environements:
+    - DDC_PROTOCOL=namecheap
+    - DDC_SERVER=dynamicdns.park-your-domain.com
+    - DDC_LOGIN=
+    - DDC_PASSWORD=
+    - DDC_HOST=
