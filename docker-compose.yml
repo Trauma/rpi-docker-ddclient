@@ -1,17 +1,14 @@
 version: '2'
 
-build:
-  context: .
-  dockerfile: Dockerfile-alternate
-  image: tromatik/rpi-docker-ddclient
-
-ddclient:
-  image: tromatik/rpi-docker-ddclient
-  volumes:
-    - ./ddclient.conf:/etc/ddclient.conf
-  environements:
-    - DDC_PROTOCOL=namecheap
-    - DDC_SERVER=dynamicdns.park-your-domain.com
-    - DDC_LOGIN=
-    - DDC_PASSWORD=
-    - DDC_HOST=
+services:
+  ddclient:
+    build: .
+    image: tromatik/rpi-docker-ddclient
+    volumes:
+      - ./ddclient.conf:/etc/ddclient.conf
+    environements:
+      - DDC_PROTOCOL=namecheap
+      - DDC_SERVER=dynamicdns.park-your-domain.com
+      - DDC_LOGIN=
+      - DDC_PASSWORD=
+      - DDC_HOST=
